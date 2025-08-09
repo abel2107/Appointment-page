@@ -30,30 +30,31 @@
   </div>
 
   <script>
-    var bookedTimes = {}; // This will keep track of bookings
+    var bookedTimes = {};
     var form = document.getElementById("appointmentForm");
     var list = document.getElementById("appointmentsList");
 
     form.onsubmit = function (e) {
-      e.preventDefault(); // Stop the form from submitting
+      e.preventDefault();
 
       var name = document.getElementById("username").value.trim();
       var time = document.getElementById("time").value;
 
       if (bookedTimes[time]) {
         alert("This time is already booked by " + bookedTimes[time]);
-        return; // Exit function
+        return;
       }
 
-      bookedTimes[time] = name; // Save booking
+      bookedTimes[time] = name;
 
       var li = document.createElement("li");
       li.textContent = time + " - " + name;
-      list.appendChild(li); // Add to list
+      list.appendChild(li); 
 
-      form.reset(); // Clear the form
+      form.reset();
     };
   </script>
 </body>
 
 </html>
+
